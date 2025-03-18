@@ -36,7 +36,6 @@ $ docker-compose up -d
 $ http://localhost:<PORT>/api/v2/seed
 ```
 
-
 ## Compilar y correr el proyecto
 
 ```bash
