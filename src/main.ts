@@ -6,7 +6,9 @@ import { CONFIG } from './env.config';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.setGlobalPrefix('api/v2') //principal route
-  
+  app.enableCors({
+    methods: ['GET', 'POST', 'PATCH', 'DELETE']
+  });
   app.useGlobalPipes( //PIPES de validacion global para las rutas
     new ValidationPipe({
       whitelist: true,
