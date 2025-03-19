@@ -31,12 +31,15 @@ $ npm i -g @nestjs/cli
 $ docker-compose up -d
 ```
 
-5. Reconstruir la base de datos con la semilla
+5. crear y configurar el archivo ```.env``` en la raiz del proyecto y luego definir las variables de entorno con las que voy a trabajar
+
 ```
-$ http://localhost:<PORT>/api/v2/seed
+MONGODB = <base de datos en la que voy a trabajar local>
+PORT= <puerto local>
 ```
 
-## Compilar y correr el proyecto
+6. ejecutar el proyecto
+
 
 ```bash
 # development
@@ -48,6 +51,14 @@ $ npm run start:dev
 # production mode
 $ npm run start:prod
 ```
+
+
+7. Reconstruir la base de datos con la semilla
+```
+$ http://localhost:<PORT>/api/v2/seed
+```
+
+
 
 ## stack usado
 * MongoDB
