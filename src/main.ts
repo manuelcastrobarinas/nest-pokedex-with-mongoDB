@@ -9,6 +9,16 @@ async function bootstrap() {
   app.enableCors({
     methods: ['GET', 'POST', 'PATCH', 'DELETE']
   });
+
+  app.use((req, res, next) => {
+    if (req.secure || req.headers['x-forwarded-proto'] === 'https') {
+      next();
+    } else {
+      res.status(400).send('Only HTTPS requests allowed');
+    }
+  });
+
+  
   app.useGlobalPipes( //PIPES de validacion global para las rutas
     new ValidationPipe({
       whitelist: true,
